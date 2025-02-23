@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>ZeesoHMS || Praba</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    /* Move content down to avoid navbar overlap */
+    .feedback-container {
+      margin-top: 120px;
+      text-align: center;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    h3.alert {
+      font-size: 1.8rem;
+      font-weight: bold;
+      background-color: #28a745;
+      color: white;
+      padding: 15px;
+      border-radius: 5px;
+      display: inline-block;
+      animation: bounceIn 1s ease-in-out;
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      width: 50%;
+      margin: auto;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .form-group h3 {
+      font-size: 1.4rem;
+      color: #333;
+      text-align: left;
+    }
+
+    input[type="submit"] {
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 10px 25px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #218838;
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.02);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  {% include "hospital/navbar.html" %}
+
+  <div class="feedback-container">
+    <h3 class='alert alert-success'>Send Us Your Valuable Feedback!</h3>
+
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <h3>{{ form.as_p }}</h3>
+        <br>
+        <input type="submit" value="Send Message" class='btn btn-primary btn-lg'>
+      </div>
+    </form>
+  </div>
+
+  {% include "hospital/footer.html" %}
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>ZeesoHMS || Praba</title>
+  <style media="screen">
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding: 2rem 1rem;
+      background-color: #f8f9fa;
+    }
+
+    .jumbotron h1,
+    .jumbotron p {
+      text-align: center;
+    }
+
+    .alert {
+      margin: 0px;
+    }
+
+    .about-container {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .about-container h2 {
+      color: #007bff;
+    }
+
+    .about-container p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+  {% include "hospital/navbar.html" %}
+  <br><br>
+  <center>
+    <h3 class='alert alert-success' style="margin-bottom:0px;">About Us</h3>
+  </center>
+
+  <div class="jumbotron">
+    <h1 class="display-4">Welcome to Zeeso HMS</h1>
+    <p class="lead">A complete hospital management solution for Admins, Doctors, and Patients.</p>
+    <hr class="my-4">
+  </div>
+
+  <div class="about-container">
+    <h2>About the Creator</h2>
+    <p>Hi, I'm <strong>Praba</strong>. I'm currently studying at <strong>Government Arts and Science College, Muthukulathur</strong>.  
+      I have developed <strong>Zeeso Hospital Management System</strong> to simplify and improve the efficiency of hospital operations.</p>
+
+    <h2>About Zeeso HMS</h2>
+    <p>Zeeso HMS is designed to manage hospital workflows efficiently, allowing administrators, doctors, and patients to interact seamlessly.  
+       The system streamlines patient records, appointments, and staff management, ensuring a smooth healthcare experience.</p>
+
+    <h2>Why Zeeso HMS?</h2>
+    <p>- User-friendly interface for seamless hospital management.<br>
+       - Secure and organized patient data handling.<br>
+       - Efficient appointment scheduling and doctor-patient interaction.<br>
+       - Simplifies hospital administration and reporting.</p>
+
+    <p>We aim to make hospital operations more effective and hassle-free!</p>
+    <a class="btn btn-primary btn-lg" href="/" role="button">HOME</a>
+  </div>
+
+  {% include "hospital/footer.html" %}
+</body>
+
+</html>
+
